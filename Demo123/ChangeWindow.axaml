@@ -1,0 +1,63 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Demo123.ChangeWindow"
+		WindowStartupLocation="CenterScreen"
+        Title="ChangeWindow">
+	<Grid RowDefinitions="Auto,*"
+			ShowGridLines="True">
+		<DockPanel Grid.Row="0">
+			<Image Source="Assets/logo.png"
+				   Height="70"
+				   Width="70"/>
+			<TextBlock Text="Logo"
+					   VerticalAlignment="Center"
+					   FontWeight="Bold"/>
+			<Button Margin="520 0 0 0"
+					Name="back">
+				<TextBlock Text="Назад"/>
+			</Button>
+			<Button Height="50"
+					Width="50"
+					Margin="50 0 10 0"
+					Background="White">
+				<Image Source="Assets/UserRole.png"
+				   Height="30"
+				   Width="30"/>
+			</Button>
+		</DockPanel>
+		<DockPanel Grid.Row="1"
+				   HorizontalAlignment="Center">
+			<Button Name="soloUser"
+					Height="175"
+					Width="175"
+					Margin="5">
+				<StackPanel>
+					<Image Source="Assets/SoloUser.png"
+						   Height="90"
+						   Width="90"
+						   Margin="10"/>
+					<TextBlock Text="Личное посещение"
+							   HorizontalAlignment="Center"
+							   Margin="0 10 0 0"/>
+				</StackPanel>
+			</Button>
+			<Button Name="groupUser"
+					Height="175"
+					Width="175"
+					Margin="5">
+				<StackPanel>
+					<Image Source="Assets/GroupUser.png"
+						   Height="90"
+						   Width="90"
+						   Margin="10"/>
+					<TextBlock Text="Групповое посещение"
+							   HorizontalAlignment="Center"
+							   Margin="0 10 0 0"/>
+				</StackPanel>
+			</Button>
+		</DockPanel>
+	</Grid>
+</Window>

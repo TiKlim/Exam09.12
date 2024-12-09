@@ -1,0 +1,303 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="600"
+        x:Class="Demo123.FormWindow"
+		WindowStartupLocation="CenterScreen"
+        Title="FormWindow">
+	<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+		  ShowGridLines="False"
+		  Name="GridForm">
+		<DockPanel Grid.Row="0">
+			<Image Source="Assets/logo.png"
+				   Height="70"
+				   Width="70"/>
+			<TextBlock Text="Logo"
+					   VerticalAlignment="Center"
+					   FontWeight="Bold"/>
+			<Button Margin="0 0 0 0"
+					Name="back"
+					HorizontalAlignment="Right">
+				<TextBlock Text="Назад"/>
+			</Button>
+			<Button Height="50"
+					Width="50"
+					Margin="50 0 10 0"
+					Background="White">
+				<Image Source="Assets/UserRole.png"
+				   Height="30"
+				   Width="30"/>
+			</Button>
+		</DockPanel>
+		<TextBlock Grid.Row="1"
+				   Text="Форма записи на посещение мероприятия"
+				   HorizontalAlignment="Center"/>
+		<DockPanel Grid.Row="2"
+				   HorizontalAlignment="Center"
+				   Width="700">
+			<Border Background="LightGray"
+					Height="130"
+					Width="240"
+					CornerRadius="9"
+					Margin="5">
+				<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+					<Border Background="Orange"
+							Grid.Row="0"
+							CornerRadius="9">
+						<TextBlock Text="Информация для пропуска"
+								   HorizontalAlignment="Center"
+								   Margin="4"/>
+					</Border>
+					<TextBlock Text="Срок действия заявки:"
+							   Grid.Row="1"
+							   HorizontalAlignment="Center"/>
+					<DockPanel Grid.Row="2"
+							   HorizontalAlignment="Center">
+						<TextBlock Text="с*"
+								   VerticalAlignment="Center"/>
+						<TextBox VerticalAlignment="Center"
+								 Watermark="00.00.0000"/>
+						<TextBlock Text="по"
+								   VerticalAlignment="Center"/>
+						<TextBox VerticalAlignment="Center"
+								 Watermark="00.00.0000"/>
+					</DockPanel>
+					<TextBlock Text="Цель посещения:"
+							   Grid.Row="3"
+							   HorizontalAlignment="Center"/>
+					<ComboBox Grid.Row="4"
+							  HorizontalAlignment="Center"
+							  Width="200">
+						<ComboBoxItem>Только спросить</ComboBoxItem>
+					</ComboBox>
+				</Grid>
+			</Border>
+			<Border Background="LightGray"
+					Height="130"
+					Width="440"
+					CornerRadius="9"
+					Margin="5">
+				<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+					<Border Background="Orange"
+							Grid.Row="0"
+							CornerRadius="9">
+						<TextBlock Text="Принимающая сторона"
+								   HorizontalAlignment="Center"
+								   Margin="4"/>
+					</Border>
+					<TextBlock Text="Подразделение*:"
+							   Grid.Row="1"
+							   HorizontalAlignment="Left"
+							   Margin="5 0 0 0"/>
+					<ComboBox Grid.Row="2"
+							  HorizontalAlignment="Left"
+							  Width="400"
+							  Margin="5 0 0 0">
+						<ComboBoxItem>Только спросить</ComboBoxItem>
+					</ComboBox>
+					<TextBlock Text="ФИО*:"
+							   Grid.Row="3"
+							   HorizontalAlignment="Left"
+							   Margin="5 0 0 0"/>
+					<ComboBox Grid.Row="4"
+							  HorizontalAlignment="Left"
+							  Width="400"
+							  Margin="5 0 0 0">
+						<ComboBoxItem>Только спросить</ComboBoxItem>
+					</ComboBox>
+				</Grid>
+			</Border>
+		</DockPanel>
+		<Border Background="LightGray"
+					Height="260"
+					Width="700"
+					CornerRadius="9"
+					Margin="5"
+				Grid.Row="3">
+			<Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+				  ColumnDefinitions="*,*,*">
+				<Border Background="Orange"
+						Grid.Row="0"
+						Grid.ColumnSpan="3"
+						CornerRadius="9">
+					<TextBlock Text="Информация о посетителе"
+							   HorizontalAlignment="Center"
+							   Margin="4"/>
+				</Border>
+				<DockPanel Grid.Row="1"
+						   Grid.Column="0">
+					<TextBlock Text="Фамилия*:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="2"
+						   Grid.Column="0">
+					<TextBlock Text="Имя*:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="3"
+						   Grid.Column="0">
+					<TextBlock Text="Отчество*:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="4"
+						   Grid.Column="0">
+					<TextBlock Text="Телефон:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<MaskedTextBox Mask="+7(000)000-00-00" CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"
+							 Watermark="+7(***)***-**-**"/>
+				</DockPanel>
+				<DockPanel Grid.Row="5"
+						   Grid.Column="0">
+					<TextBlock Text="E-mail:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="1"
+						   Grid.Column="1">
+					<TextBlock Text="Организация:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="2"
+						   Grid.Column="1">
+					<TextBlock Text="Примечание:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="3"
+						   Grid.Column="1">
+					<TextBlock Text="Дата рождения:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Watermark="00.00.0000"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="4"
+						   Grid.Column="1">
+					<TextBlock Text="Серия:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<DockPanel Grid.Row="5"
+						   Grid.Column="1">
+					<TextBlock Text="Номер:"
+							   VerticalAlignment="Center"
+							   Margin="5"/>
+					<TextBox CornerRadius="9"
+							 BorderBrush="Gray"
+							 BorderThickness="1"
+							 Margin="5"
+							 Background="White"/>
+				</DockPanel>
+				<Image Source="/Assets/SoloUser.png"
+					   Grid.Column="2"
+					   Grid.Row="0"
+					   Grid.RowSpan="5"
+					   Height="120"
+					   Width="120"/>
+				<Button Grid.Column="2"
+						Grid.Row="4"
+						HorizontalAlignment="Center"
+						Margin="5"
+						Width="120"
+						BorderBrush="Orange"
+						BorderThickness="1"
+						Background="White">
+					<TextBlock Text="Загрузить фото"
+							   FontSize="12"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+				</Button>
+			</Grid>
+		</Border>
+		<DockPanel Grid.Row="4"
+				   HorizontalAlignment="Center"
+				   Width="700">
+			<Border Background="LightGray"
+					Height="70"
+					Width="340"
+					CornerRadius="9"
+					Margin="5">
+				<Grid RowDefinitions="Auto,Auto">
+					<Border Background="Orange"
+							Grid.Row="0"
+							CornerRadius="9">
+						<TextBlock Text="Прикрепляемые документы"
+								   HorizontalAlignment="Center"
+								   Margin="4"/>
+					</Border>
+					<Button Grid.Row="1"
+							Background="Transparent"
+							Margin="5">
+						<TextBlock Text="ПРИКРЕПИТЬ ФАЙЛ"
+								   Foreground="Gray"/>
+					</Button>
+				</Grid>
+			</Border>
+			<Button Background="Transparent"
+					Margin="5">
+				<TextBlock Text="Очистить форму"
+						   Foreground="Gray"/>
+			</Button>
+			<Button Background="White"
+					BorderBrush="Orange"
+					BorderThickness="1"
+					Margin="5"
+					CornerRadius="9">
+				<TextBlock Text="Оформить заявку"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+		</DockPanel>
+		<TextBlock Text="Неправильно заполнены поля"
+				   Foreground="Red"/>
+	</Grid>
+</Window>
