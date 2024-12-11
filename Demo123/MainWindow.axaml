@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Demo123.MainWindow"
+		WindowStartupLocation="CenterScreen"
+        Title="Demo123">
+	<Grid RowDefinitions="*,Auto,Auto,Auto,Auto,Auto,*"
+			ShowGridLines="False">
+		<TextBlock Text="Логин или пароль неверны"
+				   Grid.Row="1"
+				   HorizontalAlignment="Center"
+				   Foreground="Red"
+				   IsVisible="False"
+				   Name="ahtung"/>
+		<TextBox Grid.Row="2"
+				 Width="200"
+				 Watermark="Логин"
+				 Name="loginTB"/>
+		<TextBox Grid.Row="3"
+				 Width="200"
+				 Watermark="Пароль"
+				 Name="passwordTB"/>
+		<DockPanel Grid.Row="4"
+				   HorizontalAlignment="Center"
+				   Width="200">
+			<Button Name="Welcome"
+					Width="100">
+				<TextBlock Text="Войти"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+			<Button Name="Guest"
+					Width="100">
+				<TextBlock Text="Гость"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+			</Button>
+		</DockPanel>
+		<Button Name="Registration"
+				Width="200"
+				Grid.Row="5"
+				HorizontalAlignment="Center">
+			<TextBlock Text="Зарегистрироваться"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center"/>
+		</Button>
+	</Grid>
+</Window>

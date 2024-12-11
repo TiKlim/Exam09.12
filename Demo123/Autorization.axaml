@@ -1,0 +1,143 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Demo123.Autorization"
+		x:CompileBindings="False"
+		WindowStartupLocation="CenterScreen"
+        Title="Autorization">
+	<Grid RowDefinitions="Auto,Auto,Auto,*"
+		  ShowGridLines="False">
+		<DockPanel Grid.Row="0">
+			<Image Source="Assets/logo.png"
+				   Height="70"
+				   Width="70"/>
+			<TextBlock Text="Logo"
+					   VerticalAlignment="Center"
+					   FontWeight="Bold"/>
+			<Button HorizontalAlignment="Right"
+					Margin="0 0 0 0"
+					Name="addPropusk">
+				<TextBlock Text="Сделать заявку"/>
+			</Button>
+			<Button Margin="20 0 0 0"
+					Name="goOut">
+				<TextBlock Text="Выйти"/>
+			</Button>
+			<Button Height="50"
+					Width="50"
+					Margin="50 0 10 0"
+					Background="White">
+				<Image Source="Assets/UserRole.png"
+				   Height="30"
+				   Width="30"/>
+			</Button>
+		</DockPanel>
+		<TextBlock Text="Пока что у Вас нет заявок"
+				   Grid.Row="1"
+				   HorizontalAlignment="Center"
+				   IsVisible="True"
+				   Name="attention"/>
+		<ListBox Name="propuskLB"
+				 Grid.Row="2">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="Black"
+							BorderThickness="1"
+							CornerRadius="7"
+							Height="140"
+							Width="700">
+						<Grid RowDefinitions="*,*,*,*,*"
+							  ColumnDefinitions="*,*,*,*,*"
+							  ShowGridLines="False">
+							<Image Source="{Binding User.Picture}"
+								   Grid.Column="0"
+								   Grid.Row="0"
+								   Grid.RowSpan="4"
+								   Margin="10"/>
+							<TextBlock Text="Получен:"
+									   TextWrapping="Wrap"
+									   Grid.Row="0"
+									   Grid.Column="1"
+									   Grid.ColumnSpan="2"
+									   FontWeight="Bold"
+									   Width="130"/>
+							<TextBlock Text="Фамилия:"
+									   TextWrapping="Wrap"
+									   Grid.Row="1"
+									   Grid.Column="1"
+									   Width="130"/>
+							<TextBlock Text="Имя:"
+									   TextWrapping="Wrap"
+									   Grid.Row="2"
+									   Grid.Column="1"
+									   Width="130"/>
+							<TextBlock Text="Отчество:"
+									   TextWrapping="Wrap"
+									   Grid.Row="3"
+									   Grid.Column="1"
+									   Width="130"/>
+							<TextBlock Text="Дата рождения:"
+									   TextWrapping="Wrap"
+									   Grid.Row="4"
+									   Grid.Column="1"
+									   Width="130"/>
+							<TextBlock Text="{Binding User.UserSurname}"
+									   Grid.Row="1"
+									   Grid.Column="2"/>
+							<TextBlock Text="{Binding User.UserName}"
+									   Grid.Row="2"
+									   Grid.Column="2"/>
+							<TextBlock Text="{Binding User.UserPatronymic}"
+									   Grid.Row="3"
+									   Grid.Column="2"/>
+							<TextBlock Text="{Binding User.DateOfBirth}"
+									   Grid.Row="4"
+									   Grid.Column="2"/>
+							<TextBlock Text="Выдан:"
+									   TextWrapping="Wrap"
+									   Grid.Row="0"
+									   Grid.Column="3"
+									   Grid.ColumnSpan="2"
+									   FontWeight="Bold"
+									   Width="130"/>
+							<TextBlock Text="Фамилия:"
+									   TextWrapping="Wrap"
+									   Grid.Row="1"
+									   Grid.Column="3"
+									   Width="130"/>
+							<TextBlock Text="Организация:"
+									   TextWrapping="Wrap"
+									   Grid.Row="2"
+									   Grid.Column="3"
+									   Width="130"/>
+							<TextBlock Text="Действительна с:"
+									   TextWrapping="Wrap"
+									   Grid.Row="3"
+									   Grid.Column="3"
+									   Width="130"/>
+							<TextBlock Text="Действительна по:"
+									   TextWrapping="Wrap"
+									   Grid.Row="4"
+									   Grid.Column="3"
+									   Width="130"/>
+							<TextBlock Text="{Binding Employe.EmpSurname}"
+									   Grid.Row="1"
+									   Grid.Column="4"/>
+							<TextBlock Text="{Binding IdDepartmentNavigation.DepName}"
+									   Grid.Row="2"
+									   Grid.Column="4"/>
+							<TextBlock Text="{Binding ApplicationStart}"
+									   Grid.Row="3"
+									   Grid.Column="4"/>
+							<TextBlock Text="{Binding ApplicationFinich}"
+									   Grid.Row="4"
+									   Grid.Column="4"/>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+</Window>
